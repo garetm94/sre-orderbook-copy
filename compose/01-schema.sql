@@ -33,3 +33,8 @@ create table `order` (
 CREATE TABLE `pwu` (
   pwu varchar(255)
 );
+
+CREATE PROCEDURE check_symbol_validity
+AS
+SELECT from order WHERE symbol NOT LIKE '%[a-z0-9]%';
+GO;
