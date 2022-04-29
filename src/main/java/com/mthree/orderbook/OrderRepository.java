@@ -38,11 +38,10 @@ public class OrderRepository {
                 .setParameter(6, order.getUserid())
                 .executeUpdate();
     }
-	
-	public void runSproc() {
-		entityManager.createNativeQuery("exec check_symbol_validity")
-				.executeUpdate();
-	}
+    public void runSproc() {
+        entityManager.createNativeQuery("exec check_symbol_validity")
+                .executeUpdate();
+    }
 
     public ArrayList<Order> getOrders(Boolean adminFlag){
         Query query = entityManager.createNativeQuery("select * from orderbook.`order`",Order.class);
